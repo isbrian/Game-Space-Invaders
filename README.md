@@ -80,3 +80,9 @@ npm test
 ```
 
 瀏覽器端、多人連線與 8 人同場的端對端驗證位於 [test/browser_check.py](test/browser_check.py)。
+
+## 授權
+
+本專案採用 [MIT License](LICENSE)。歡迎使用、修改與散布本專案，包括商業用途。
+
+散布本專案或其重要部分時，請依授權條款保留原始著作權聲明與 MIT License，以標示程式來源為 [Game-Space-Invaders](https://github.com/isbrian/Game-Space-Invaders)。MIT License 不要求在遊戲畫面中顯示作者署名。
