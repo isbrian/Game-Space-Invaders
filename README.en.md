@@ -85,6 +85,10 @@ Browser, multiplayer, and 8-player end-to-end verification is implemented in [te
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). You may use, modify, and distribute it, including for commercial purposes.
+This project is licensed under the [Game-Space-Invaders Custom License](LICENSE). You may use, copy, and modify the project subject to the license terms.
 
-When distributing this project or substantial portions of it, retain the original copyright notice and MIT License as required by the license terms to identify the source as [Game-Space-Invaders](https://github.com/isbrian/Game-Space-Invaders). The MIT License does not require author attribution to be displayed inside the game UI.
+Redistribution of the original, unmodified version is permitted, including for commercial purposes, provided that the original copyright notice and this license are retained.
+
+If you adopt this project and make any modifications, you must obtain the copyright holder's prior written permission before using the **modified version for any commercial purpose**. This restriction applies regardless of whether the modified version is publicly released, sold, or redistributed, and includes deployment as part of a commercial service or product, licensing it to third parties, or any other revenue-generating activity. Modified versions may be used or redistributed for non-commercial purposes as allowed by the license, provided that the original copyright notice and this license are retained.
+
+See [LICENSE](LICENSE) for the complete terms.
