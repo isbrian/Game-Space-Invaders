@@ -1,0 +1,30 @@
+.DS_Store
+*.log
+
+# 瀏覽器煙霧測試的產物（每次執行重新產生）
+test/screenshot.png
+test/screenshot-multiplayer.png
+test/screenshot-8players.png
+test/screenshot-boss.png
+
+# Node 依賴
+node_modules/
+
+# 內部開發文件（不得發布至 Public repository）
+CLAUDE.md
+PROGRESS_REPORT_*.md
+report/
+todo/
+.agents/
+.codex/
+session-handoff-*.md
+
+# 常見的本地設定與憑證檔
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore

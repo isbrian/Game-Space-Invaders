@@ -1,0 +1,13 @@
+{
+  "name": "game-space-invaders",
+  "version": "1.0.0",
+  "private": true,
+  "description": "小蜜蜂 × 雷電 × 兵蜂 三合一經典 2D 射擊遊戲",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node --test test/regression.test.js test/server.test.js"
+  },
+  "dependencies": {
+    "ws": "^8.21.3"
+  }
+}

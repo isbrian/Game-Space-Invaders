@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <!-- 縮放限制已移除：畫布用 touch-action: none 擋手勢即可，不需要犧牲整頁的可縮放性 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小蜜蜂 2D 射擊｜Galaxian × Raiden × TwinBee</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="arcade-cabinet">
+    <!-- 機台頂部資訊列 -->
+    <header class="cabinet-header">
+      <div class="game-title">GALAXIAN 2026</div>
+      <div class="hud-bar">
+        <div class="hud-group">
+          <span class="hud-label">HI-SCORE</span>
+          <span class="hud-val" id="highScoreVal">010000</span>
+        </div>
+        <div class="hud-group">
+          <span class="hud-label">1UP SCORE</span>
+          <span class="hud-val" id="scoreVal">000000</span>
+        </div>
+        <div class="hud-group">
+          <span class="hud-label">STAGE</span>
+          <span class="hud-val" id="levelVal">1</span>
+        </div>
+        <div class="hud-group">
+          <span class="hud-label">LIVES</span>
+          <span class="hud-val hud-lives" id="livesVal">3</span>
+        </div>
+        <div class="hud-group">
+          <span class="hud-label">BOMB</span>
+          <span class="hud-val hud-bomb" id="bombsVal">2</span>
+        </div>
+        <div class="hud-group">
+          <span class="hud-label">SHIELD</span>
+          <span class="hud-val hud-shield" id="shieldVal">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 遊戲畫布與 CRT 掃描線層 -->
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="480" height="640"></canvas>
+      <div class="crt-overlay"></div>
+    </div>
+
+    <!-- 多人連線：免登入，開網址即自動配對 -->
+    <section class="network-panel">
+      <div class="network-title">🌐 多人連線</div>
+
+      <div class="nick-row">
+        <label for="nickInput">暱稱</label>
+        <input id="nickInput" class="nick-input" type="text" maxlength="12"
+               placeholder="不填就隨機給一個" autocomplete="off">
+        <button id="btnJoin" class="arcade-btn">換暱稱重新加入</button>
+        <span id="networkStatus" class="network-status">連線中…</span>
+      </div>
+
+      <!-- 玩家色票分數榜：8 人同場時辨認隊友與比分的主要介面 -->
+      <ol id="rosterList" class="roster-list"></ol>
+
+      <div class="network-help">開啟網址即自動配對，最多 8 人同場，戰機顏色由伺服器配發且不重複。<br>
+        連不上伺服器時會自動退回單人模式，遊戲照常進行。</div>
+    </section>
+
+    <!-- 機台控制按鍵 -->
+    <footer class="cabinet-footer">
+      <div class="btn-group">
+        <button id="btnStart" class="arcade-btn">開始／重新</button>
+        <button id="btnPause" class="arcade-btn">暫停 (P)</button>
+        <button id="btnBomb" class="arcade-btn btn-bomb">清屏炸彈 (B)</button>
+        <button id="btnSound" class="arcade-btn">音效：開</button>
+      </div>
+
+      <!-- 行動裝置虛擬按鍵 -->
+      <div class="touch-controls">
+        <button id="touchBomb" class="touch-btn">💣 投放炸彈</button>
+      </div>
+
+      <div class="help-text">
+        鍵盤：[←][→][↑][↓] 或 [W][A][S][D] 移動 ｜ [空白鍵] 或 [J] 射擊 ｜ [B] 或 [K] 清屏炸彈 ｜ [P] 暫停<br>
+        手機/平板：手指觸控螢幕拖曳戰機與自動連射 ｜ 點擊「💣 投放炸彈」
+      </div>
+    </footer>
+  </div>
+
+  <!-- 模組化無依賴載入 (Ponytail-ZH 極簡規範) -->
+  <!-- shared/ 為零 DOM 純邏輯層，與 Node 權威伺服器共用同一份規則；須先於 render.js 載入 -->
+  <script src="shared/math.js"></script>
+  <script src="shared/entities.js"></script>
+  <script src="shared/world.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/net.js"></script>
+  <script src="js/localRoom.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
